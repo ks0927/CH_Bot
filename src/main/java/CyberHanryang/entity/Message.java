@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 @Table(name = "messages")
 public class Message {
     @Id
-    @Column(name = "server_id")
+    @Column(name = "message_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
