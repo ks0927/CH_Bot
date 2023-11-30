@@ -10,10 +10,10 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "messages")
-public class Message {
+@Table(name = "user_messages")
+public class UserMessage {
     @Id
-    @Column(name = "message_id")
+    @Column(name = "user_message_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -29,12 +29,12 @@ public class Message {
     @JoinColumn(name = "server_id")
     private Server server;
 
-    public static Message create(String tag, String content,User user, Server server) {
-        Message message = new Message();
-        message.tag = tag;
-        message.content = content;
-        message.user = user;
-        message.server = server;
-        return message;
+    public static UserMessage create(String tag, String content, User user, Server server) {
+        UserMessage userMessage = new UserMessage();
+        userMessage.tag = tag;
+        userMessage.content = content;
+        userMessage.user = user;
+        userMessage.server = server;
+        return userMessage;
     }
 }
