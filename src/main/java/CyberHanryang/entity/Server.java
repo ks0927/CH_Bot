@@ -18,4 +18,11 @@ public class Server {
     private String tag;
 
     private String name;
+
+    public static Server create(String tag, String name) {
+        Server server = new Server();
+        server.tag = tag;
+        server.name = name;
+        return server;
+    }
 }
