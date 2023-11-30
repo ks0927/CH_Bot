@@ -28,4 +28,13 @@ public class Message {
     @ManyToOne
     @JoinColumn(name = "server_id")
     private Server server;
+
+    public static Message create(String tag, String content,User user, Server server) {
+        Message message = new Message();
+        message.tag = tag;
+        message.content = content;
+        message.user = user;
+        message.server = server;
+        return message;
+    }
 }
