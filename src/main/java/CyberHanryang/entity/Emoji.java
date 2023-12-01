@@ -25,4 +25,12 @@ public class Emoji {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "server_id")
     private Server server;
+
+    public static Emoji create(String tag, String name, Server server) {
+        Emoji emoji = new Emoji();
+        emoji.tag = tag;
+        emoji.name = name;
+        emoji.server = server;
+        return emoji;
+    }
 }
